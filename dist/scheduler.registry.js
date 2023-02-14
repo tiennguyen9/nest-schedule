@@ -70,7 +70,7 @@ let SchedulerRegistry = SchedulerRegistry_1 = class SchedulerRegistry {
             throw new Error((0, schedule_messages_1.DUPLICATE_SCHEDULER)('Cron Job', name));
         }
         job.fireOnTick = this.wrapFunctionInTryCatchBlocks(job.fireOnTick, job);
-        this.cronJobs.set(name, job);
+        return this.cronJobs.set(name, job);
     }
     addInterval(name, intervalId) {
         const ref = this.intervals.get(name);
